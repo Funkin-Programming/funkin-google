@@ -1,0 +1,38 @@
+{
+"name": "funkin-google",
+"url": "https://github.com/Funkin-Programming/funkin-google",
+"license": "MIT",
+"tags": [
+"fnf",
+"friday-night-funkin",
+"google",
+"firebase",
+"cloud",
+"save",
+"mobile",
+"android",
+"ios",
+"haxe",
+"openfl",
+"flixel"
+],
+"description": "Google integration module for Friday Night Funkin' engines, featuring login, cloud save, and account synchronization.",
+"version": "1.0.0",
+"classPath": "source",
+"releasenote": "Initial release with Google login, cloud save, and synchronization support.",
+"contributors": [
+"Funkin-Programming",
+"Community"
+],
+"dependencies": {
+"haxe": "",
+"openfl": ">=9.3.0",
+"lime": ">=8.0.0",
+"flixel": ">=5.0.0",
+"flixel-addons": "",
+"flixel-ui": "",
+"hscript": "",
+"json2object": "",
+"thx.core": ""
+}
+}
