@@ -16,14 +16,15 @@
 "openfl",
 "flixel"
 ],
-"description": "Google integration module for Friday Night Funkin' engines, featuring login, cloud save, and account synchronization.",
-"version": "1.0.0",
+"description": "Advanced Google & Firebase integration module for Friday Night Funkin' engines with login, cloud save, realtime sync, and mobile support.",
+"version": "2.0.0",
 "classPath": "source",
-"releasenote": "Initial release with Google login, cloud save, and synchronization support.",
+"releasenote": "Added Firebase support, extraParams configuration, and automatic mobile setup.",
 "contributors": [
 "Funkin-Programming",
 "Community"
 ],
+
 "dependencies": {
 "haxe": "",
 "openfl": ">=9.3.0",
@@ -34,5 +35,58 @@
 "hscript": "",
 "json2object": "",
 "thx.core": ""
+},
+
+"extraParams": {
+"google": {
+"enabled": true,
+"clientId": "",
+"clientSecret": "",
+"redirectUri": "com.funkin.google:/oauth2redirect",
+"scopes": [
+"profile",
+"email",
+"https://www.googleapis.com/auth/drive.appdata"
+]
+},
+
+"firebase": {
+  "enabled": true,
+  "apiKey": "",
+  "authDomain": "",
+  "projectId": "",
+  "storageBucket": "",
+  "messagingSenderId": "",
+  "appId": "",
+  "databaseURL": "",
+  "autoLogin": true,
+  "autoSync": true,
+  "offlineCache": true
+},
+
+"mobile": {
+  "android": {
+    "googleServicesJson": "android/app/google-services.json",
+    "enablePlayServices": true
+  },
+  "ios": {
+    "googleServiceInfoPlist": "ios/Runner/GoogleService-Info.plist",
+    "enableSignIn": true
+  }
+},
+
+"cloudSave": {
+  "enabled": true,
+  "autoUpload": true,
+  "autoDownload": true,
+  "conflictStrategy": "latest"
+},
+
+"debug": {
+  "enabled": false,
+  "logAuth": true,
+  "logSync": true
+}
+
 }
 }
