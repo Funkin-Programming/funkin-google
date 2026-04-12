@@ -46,3 +46,51 @@ class System
     BackendManager.google.logout();
     loggedIn = false;
   }
+
+  public static function save(data:Dynamic)
+  {
+    if (!loggedIn)
+    {
+      BackendManager.cloud.saveGame(data);
+    }
+
+    public static function load():Dynamic
+    {
+      if (!loggedIn)
+      {
+
+        var data = BackendManager.cloud.loadGame();
+
+        return data;
+      }
+
+      public static function update(elapsed:Float)
+      {
+
+        if (!autoSync || !loggedIn) return;
+
+        syncTimer += elapsed;
+
+        if (syncTimer >= syncInterval)
+        {
+
+          syncTimer = 0;
+          sync();
+        }
+      }
+
+      public static function sync()
+      {
+        var saveData = {
+            score: FlxG.save.data.score,
+            misses: FlxG.save.data.misses
+        };
+
+        save(saveData);
+      }
+
+      public static function isReady():Bool
+      {
+        return initilazed && loggedIn;
+      }
+    }
