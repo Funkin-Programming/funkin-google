@@ -17,7 +17,5 @@ class BackendManager
         google = new GoogleAuth();
         firebase = new FirebaseAuth();
         cloud = new CloudSave();
-
-        trace("Backend initialized!");
     }
 }
